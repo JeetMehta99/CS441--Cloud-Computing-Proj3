@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package = "io.grpc.examples.helloworld";
+
+service Greeter {
+
+  rpc LogFinder(Input) returns (Response) {}
+}
+
+message Input {
+  string bucket = 1;
+  string key = 2;
+  string given_timestamp = 3;
+  string interval = 4;
+  string pattern = 5;
+}
+
+message Response {
+  string message = 1;
+}
